@@ -1,0 +1,57 @@
+.register-container {
+  .header {
+    height: 45px;
+    text-align: right;
+    padding: 5px 100px 0 100px;
+    button {
+      padding: 3px 15px;
+      margin-left: 15px;
+      border-radius: 5px;
+      background: #c1bdbd;
+      border: 1px solid;
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+  .title {
+    font-size: 25px;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .welcome {
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .content-form {
+    input {
+      margin-bottom: 15px 0;
+      margin-top: 3px;
+    }
+    button {
+      // ăn theo width thằng cha
+      width: 100%;
+      height: 40px;
+      border: none;
+      color: white;
+      background-color: rgb(30, 25, 25);
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    .back {
+      cursor: pointer;
+    }
+    // con mắt nằm trong class cha pass-group, thằng con sẽ tìm đến thằng cha để căn
+    .pass-group {
+      position: relative;
+
+      .icons-eye {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+  }
+}
