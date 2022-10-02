@@ -15,8 +15,10 @@ export default function HomePage(props) {
         <source src={videoHomePage} type="video/mp4" />
       </video>
       <div className="homepage-content">
-        <div className="title-1">The World’s Fastest Growing Crypto App</div>
-        <div className="title-2">Buy crypto at true cost</div>
+        <div className="title-1 text-white">
+          The World’s Fastest Growing Crypto App
+        </div>
+        <div className="title-2 text-black">Buy crypto at true cost</div>
         <div className="title-3">
           <button onClick={() => navigate("/register")}>
             Get's started. It's free

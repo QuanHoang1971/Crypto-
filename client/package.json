@@ -37,6 +37,9 @@
       "react-app/jest"
     ]
   },
+  "externals": {
+    "react": "React"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

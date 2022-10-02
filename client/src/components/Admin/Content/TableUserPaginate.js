@@ -35,15 +35,15 @@ const TableUserPaginate = (props) => {
                   <td>{item.email}</td>
                   <td>{item.role}</td>
                   <td>
-                    <button className="btn btn-secondary mx-3">View</button>
+                    {/* <button className="btn btn-secondary mx-3">View</button> */}
                     <button
-                      className="btn btn-warning mx-3"
+                      className="btn btn-warning mx-4"
                       onClick={() => props.handleClickBtnUpdate(item)}
                     >
                       Update
                     </button>
                     <button
-                      className="btn btn-danger mx-3"
+                      className="btn btn-danger mx-4"
                       // phải truyền vào item tham số đầu vào để biết đang delete tới ng dùng nào
                       onClick={() => props.handleClickBtnDelete(item)}
                     >

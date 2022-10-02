@@ -46,7 +46,6 @@ export default function SideBar({
               whiteSpace: "nowrap",
             }}
           >
-            {/* <span>Quan</span> */}
             <DiReact size={"3em"} color={"00bfff"} />
             <NavLink to="/" className="nav-link fs-4">
               Home
@@ -62,10 +61,10 @@ export default function SideBar({
             </MenuItem>
           </Menu>
           <Menu iconShape="circle">
-            <SubMenu icon={<FaGem />} title="Feature">
+            {/* <SubMenu icon={<FaGem />} title="Feature">
               <MenuItem>Users Manager</MenuItem>
               <Link to="/admins/manage-users" />
-            </SubMenu>
+            </SubMenu> */}
           </Menu>
         </SidebarContent>
 

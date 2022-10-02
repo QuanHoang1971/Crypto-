@@ -16,6 +16,7 @@ export default function Layout(props) {
   return (
     <>
       <Routes>
+        {/* mỗi lần vào route nào thì sẽ render element tương ứng */}
         <Route path="/" element={<App />}>
           {/* nếu ko có thằng con nào match thì sẽ cho Route index vào, App trùng vs Homepage, ko cần path */}
           <Route index element={<HomePage />} />
@@ -27,7 +28,7 @@ export default function Layout(props) {
 
         <Route path="/admins" element={<Admin />}>
           {/* mặc định luôn có dashboard */}
-          <Route index element={<DashBoard />} />
+          {/* <Route index element={<DashBoard />} /> */}
           <Route path="manage-users" element={<ManageUser />} />
         </Route>
 
@@ -36,6 +37,7 @@ export default function Layout(props) {
       </Routes>
 
       {/* dùng Fragment để thêm các component ntn, ko render vào giao diện ,ko bị vỡ */}
+      {/* khai báo Toast ở đây để dùng đc nhiều nơi khi cần hiện thông báo */}
       <ToastContainer
         position="top-right"
         autoClose={5000}

@@ -1,4 +1,5 @@
 // đay là import trực tiếp từ thư viện
+// là nơi chạy đầu tiên
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom/client";

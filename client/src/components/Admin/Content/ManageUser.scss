@@ -11,14 +11,14 @@
   }
 }
 .modal-add-user {
-  .img-review {
+  .img-preview {
     border: 1px dashed #ccc;
-    height: 150px;
+    height: 100px;
     border-radius: 5px;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #ccc;
-
     img {
       max-width: 100%;
       max-height: 100%;

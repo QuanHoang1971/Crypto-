@@ -1,7 +1,8 @@
 // nhung gi lien quan den API thi vao day
-
+// biến instance liên quan đến axios
 import axios from "../utils/axiosCustomize";
 
+// vì là form data nên trong github của axios sẽ cần truyền vào những trường này
 const postCreateNewUser = (email, password, username, role, image) => {
   const data = new FormData();
   data.append("email", email);
@@ -55,6 +56,7 @@ const postRegister = (userEmail, userPassword, username) => {
   // phải nhìn bên postman xem ở body đang là form-data hay x-www-form để truyền data cho đúng
 };
 
+// export ra nhiều file thì để dạng object { }, tạo ra nhiều biến
 export {
   postCreateNewUser,
   getAllUsers,

@@ -1,14 +1,13 @@
-import ModalCreateUser from "./ModalCreateUser";
-import "./ManageUser.scss";
-import { FcPlus } from "react-icons/fc";
 import { useEffect, useState } from "react";
-import TableUser from "./TableUser";
+import { FcPlus } from "react-icons/fc";
 import {
   getAllUsers,
   getUserWithPaginate,
 } from "../../../services/apiServices";
-import ModalUpdateUser from "./ModalUpdateUser";
+import "./ManageUser.scss";
+import ModalCreateUser from "./ModalCreateUser";
 import ModalDeleteUser from "./ModalDeleteUser";
+import ModalUpdateUser from "./ModalUpdateUser";
 import TableUserPaginate from "./TableUserPaginate";
 
 export default function ManageUser(props) {
@@ -16,6 +15,7 @@ export default function ManageUser(props) {
   // khi ko có ng dùng thì ko hiển thị phân trang
   const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  // nút add new ko nằm bên trong CreateUser nên cần đặt state cho thằng cha Manage
   const [showModalCreateUser, setShowModalCreateUser] = useState(false);
   const [showModalUpdateUser, setShowModalUpdateUser] = useState(false);
   const [dataUpdate, setDataUpdate] = useState({});
@@ -98,6 +98,7 @@ export default function ManageUser(props) {
           />
         </div>
 
+        {/* truyền xuống cho thằng con để dùng props ở ModalCreateUser */}
         <ModalCreateUser
           show={showModalCreateUser}
           setShow={setShowModalCreateUser}

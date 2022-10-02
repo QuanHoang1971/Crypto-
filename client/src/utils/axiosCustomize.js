@@ -36,16 +36,19 @@ instance.interceptors.response.use(
     // Do something with response data
     NProgress.done();
 
+    // check phản hồi chỉ lấy cục data thôi, những thứ khác trả về từ server ko lấy, hoặc ko có thì để nguyên
     return response && response.data ? response.data : response;
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error, nếu mã lỗi phản hồi từ backend thì nó sẽ trả về client
+    // nếu bị lỗi thì sẽ chạy vào hàm này. Nếu lỗi thì in ra response.data, nếu ko lỗi thì trả ra Promise in ra màn hình
     return error && error.response && error.response.data
       ? error.response.data
       : Promise.reject(error);
   }
 );
+// axiosCustomize để giản lược hóa bước xử lí data từ phía client
 // kiểm tra nếu ko có thì báo lỗi ra màn hình
 // tác dụng của axios, trước khi về đến tay ng dùng phải customize axios
 // nếu có mã lỗi từ server thì sẽ báo ra màn hình
