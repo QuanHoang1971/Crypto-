@@ -1,5 +1,4 @@
 import ReactPaginate from "https://cdn.skypack.dev/react-paginate@7.1.3";
-import { useEffect, useState } from "react";
 
 const TableUserPaginate = (props) => {
   // pageCount đc lấy dựa vào props, nhớ phải dùng { } vì bên thằng cha cũng dùng {}
@@ -10,7 +9,7 @@ const TableUserPaginate = (props) => {
     props.fetchListUsersWithPaginate(+event.selected + 1);
     // mỗi khi chuyển trang có state biết đc đang ở trang nào
     props.setCurrentPage(+event.selected + 1);
-    console.log(`User requested page number ${event.selected}`);
+    // console.log(`User requested page number ${event.selected}`);
   };
 
   return (

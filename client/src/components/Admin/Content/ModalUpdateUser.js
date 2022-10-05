@@ -38,6 +38,7 @@ function ModalUpdateUser(props) {
 
     if (!_.isEmpty(dataUpdate)) {
       // nếu biến ko rỗng thì sẽ update state giá trị ng dùng
+      // sau đó cập nhật lại
       setEmail(dataUpdate.email);
       setRole(dataUpdate.role);
       setUsername(dataUpdate.username);

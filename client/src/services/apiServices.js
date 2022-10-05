@@ -12,7 +12,7 @@ const postCreateNewUser = (email, password, username, role, image) => {
   data.append("userImage", image);
   return axios.post("api/v1/participant", data);
 };
-// phải là get để lấy dữ liệu về
+// phải là get để lấy dữ liệu về, ko truyền lên data như post nên ko cho vào
 const getAllUsers = () => {
   return axios.get("api/v1/participant/all");
 };

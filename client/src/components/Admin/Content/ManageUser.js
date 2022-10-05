@@ -14,14 +14,20 @@ export default function ManageUser(props) {
   const LIMIT_USER = 3;
   // khi ko có ng dùng thì ko hiển thị phân trang
   const [pageCount, setPageCount] = useState(0);
+
   const [currentPage, setCurrentPage] = useState(1);
   // nút add new ko nằm bên trong CreateUser nên cần đặt state cho thằng cha Manage
   const [showModalCreateUser, setShowModalCreateUser] = useState(false);
+
   const [showModalUpdateUser, setShowModalUpdateUser] = useState(false);
+  // đây là data của user muốn update, mỗi khi cập nhật lại state thì hàm return sẽ render lại
+  // nvay data mới nhất sẽ đc cập nhật
   const [dataUpdate, setDataUpdate] = useState({});
+
   const [dataDelete, setDataDelete] = useState({});
 
   const [showModalDeleteUser, setShowModalDeleteUser] = useState(false);
+
   const [listUsers, setListUsers] = useState([]);
 
   useEffect(() => {
@@ -32,9 +38,11 @@ export default function ManageUser(props) {
   const fetchListUsers = async () => {
     let res = await getAllUsers();
     if (res.EC === 0) {
+      // gọi API xong sẽ cập nhật biến ListUsers
       setListUsers(res.DT);
     }
   };
+  // sau khi thêm mới POST ng dùng thành công sẽ gọi lại tất cả ng dùng, nvay sẽ thấy danh sách ng dùng đc cập nhật
 
   // get ng dùng theo phân trang
   const fetchListUsersWithPaginate = async (page) => {
@@ -49,6 +57,7 @@ export default function ManageUser(props) {
   // tạo hàm rồi set cho nó xuất hiện, gán nó xuống table ở dưới
   // thông tin đang ở thằng cha, muốn truyền cho con phải cập nhật lại state để return chạy lại, đưa cho react quản lí
   //  1 biến ko thể chia sẻ giữa các component, chỉ có React làm đc,
+  // thằng cha muốn giao tiếp vs thằng con thì truyền cho nó 1 function
   const handleClickBtnUpdate = (user) => {
     setShowModalUpdateUser(true);
     setDataUpdate(user);

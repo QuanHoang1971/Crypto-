@@ -5,13 +5,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import App from "./App";
 import Admin from "./components/Admin/Admin";
-import DashBoard from "./components/Admin/Content/DashBoard";
 import ManageUser from "./components/Admin/Content/ManageUser";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import Crypto from "./components/Crypto/Crypto";
 import HomePage from "./components/Home/HomePage";
-import Coin from "./routes/Coin";
 export default function Layout(props) {
   return (
     <>
@@ -23,7 +21,6 @@ export default function Layout(props) {
 
           {/* 3 component nay có quan hệ vs nhau nên phải đóng tag ở /Route nthe */}
           <Route path="crypto/*" element={<Crypto />} />
-          <Route path="*" element={<Coin />} />
         </Route>
 
         <Route path="/admins" element={<Admin />}>

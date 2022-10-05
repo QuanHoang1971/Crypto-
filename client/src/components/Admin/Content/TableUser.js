@@ -7,6 +7,9 @@ const TableUser = (props) => {
     <>
       <table className="table table-hover table-bordered">
         <thead>
+          {/* sau khi đống HTML này được chèn vào DOM thì mới gọi API
+        để hàm return này nó chạy trước thì dùng useEffect, chạy sau khi hàm render này đc chạy
+        hạn chế bị lỗi */}
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Username</th>
@@ -19,6 +22,7 @@ const TableUser = (props) => {
             listUsers.length > 0 &&
             listUsers.map((item, index) => {
               return (
+                /* tạo ra 1 key unique ở key={` `*/
                 <tr key={`table-user-${index}`}>
                   <td>{item.id}</td>
                   <td>{item.username}</td>
@@ -55,6 +59,5 @@ const TableUser = (props) => {
 };
 export default TableUser;
 
-/* 1 col này =4 cols  */
-/* tạo ra 1 key unique ở key={` `*/
+/* 1 col này =4 cols, table có 4 col nhưng chỉ có 1 dòng thông tin thôi  */
 // DT là 1 mảng trả về từ server
